@@ -129,9 +129,41 @@ def main(input_file, output_file, next_q, changed_states):
 
 
 if __name__ == '__main__':
-    tests = True
+    tests = False
     input_file = "tests/sameamount10.txt" if tests else "input.in"
     out_file = "output.out"
     next_q = 5
     changed_states = []
     main(input_file, out_file, next_q, changed_states)
+
+
+"""
+0 1 * r 0
+0 0 * r 0
+0 _ $ l 1
+
+1 $ * l 1
+1 # * l 1
+1 0 # r 2
+1 1 # r 3
+
+2 $ * r 2
+2 # * r 2
+2 _ 0 l 4
+2 0 * r 2
+2 1 * r 2
+
+3 $ * r 3
+3 # * r 3
+3 _ 1 l 4
+3 0 * r 3
+3 1 * r 3
+
+4 0 * l 4
+4 1 * l 4
+4 $ * l 4
+4 # * * 1
+
+
+Inverter
+"""
