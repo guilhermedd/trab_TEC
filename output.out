@@ -1,91 +1,428 @@
-;S
-k0 _ _ L k1
-k0 0 0 L k1
-k0 1 1 L k1
-k0 B B L k1
-k0 X X L k1
-k0 1 1 L k1
-k0 0 0 L k1
-k0 _ _ L k1
-k0 0 0 L k1
-k0 1 1 L k1
-k0 _ _ L k1
-k0 B B L k1
-k0 X X L k1
-k0 0 0 L k1
-k0 1 1 L k1
-k0 _ _ L k1
-k0 B B L k1
-k0 X X L k1
-k0 0 0 L k1
-k0 1 1 L k1
-k0 _ _ L k1
-k0 B B L k1
-k0 X X L k1
-k0 0 0 L k1
-k0 1 1 L k1
-k0 _ _ L k1
-k0 B B L k1
-k0 X X L k1
-k0 _ _ L k1
-k0 1 1 L k1
-k0 0 0 L k1
-k0 X X L k1
-k0 B B L k1
-k0 1 1 L k1
-k0 X X L k1
-k0 0 0 L k1
-k0 0 0 L k1
-k0 X X L k1
-k0 1 1 L k1
-k0 _ _ L k1
-k0 0 0 L k1
-k0 1 1 L k1
-k0 B B L k1
-k0 X X L k1
-k1 _ # R 0
-0 # # L r
-0 # # L r
-0 # # L r
-0 # # L r
-0 # # L r
-1 # # L r
-1 # # L r
-1 # # L r
-2 # # L r
-2 # # L r
-2 # # L r
-2 # # L r
-2 # # L r
-5 # # L r
-5 # # L r
-5 # # L r
-5 # # L r
-5 # # L r
-3 # # L r
-3 # # L r
-3 # # L r
-3 # # L r
-3 # # L r
-6 # # L r
-6 # # L r
-6 # # L r
-6 # # L r
-6 # # L r
-4 # # L r
-8 # # L r
-8 # # L r
-8 # # L r
-8 # # L r
-9 # # L r
-9 # # L r
-9 # # L r
-10 # # L r
-10 # # L r
-10 # # L r
-7 # # L r
-7 # # L r
-7 # # L r
-7 # # L r
-7 # # L r
-r _ _ - reject
+0 _ * r *
+0 1 * * q0
+0 0 * * q0
+q0 1 * r *
+q0 0 * r *
+q0 _ _ r qz
+qz _ _ l qz1
+qz 1 * * q0
+qz 0 * * q0
+qz1 _ $ l q1
+q1 0 # r q2
+q1 # * l q4z
+q1 1 # r q3
+q2 $ 0 l q1
+q2 # 0 l q1
+q3 # 1 l q1
+q3 $ 1 l q1
+q4 # ! r 1
+q4 _ _ r q4
+q4 0 0 * q1
+q4 1 1 * q1
+q4z # * * q4
+q4z 1 * * q4
+q4z 0 * * q4
+1 _ _ l 2
+1 0 0 r 1
+1 1 1 r 1
+1 B B r 1
+1 X X r 1
+2 1 _ r 3
+2 0 _ r 4
+2 _ _ r 5
+3 0 1 l 6
+3 1 1 l 6
+3 _ 1 l 6
+3 B 1 l 6
+3 X 1 l 6
+6 0 0 l 2
+6 1 1 l 2
+6 _ _ l 2
+6 B B l 2
+6 X X l 2
+4 0 0 l 7
+4 1 0 l 7
+4 _ 0 l 7
+4 B 0 l 7
+4 X 0 l 7
+7 0 0 l 2
+7 1 1 l 2
+7 _ _ l 2
+7 B B l 2
+7 X X l 2
+5 _ B r 8
+9 1 X l 10
+9 0 X l 11
+9 X X l 9
+9 B B r halt-accept
+10 1 1 l 10
+10 X X l 10
+10 0 X r 8
+11 0 0 l 11
+11 X X l 11
+11 1 X r 8
+8 _ _ l 9
+8 0 0 r 8
+8 1 1 r 8
+8 B B r 8
+8 X X r 8
+0 ! * r q5z
+q5z _ * r *
+q5z 1 * * q5
+q5z 0 * * q5
+
+q5 1 * r *
+q5 0 * r *
+q5 _ $ l q6
+
+q6 0 # r q7
+q6 # * l q9z
+q6 1 # r q8
+
+q7 $ 0 l q6
+q7 # 0 l q6
+
+q8 # 1 l q6
+q8 $ 1 l q6
+
+q9 # _ r 0
+q9 _ _ r q9
+q9 0 0 * q6
+q9 1 1 * q6
+
+q9z _ _ r q10
+q9z # * * q9
+q9z 1 * * q9
+q9z 0 * * q9
+
+q10 # _ l 0
+1 ! * r q11z
+q11z _ * r *
+q11z 1 * * q11
+q11z 0 * * q11
+
+q11 1 * r *
+q11 0 * r *
+q11 _ $ l q12
+
+q12 0 # r q13
+q12 # * l q15z
+q12 1 # r q14
+
+q13 $ 0 l q12
+q13 # 0 l q12
+
+q14 # 1 l q12
+q14 $ 1 l q12
+
+q15 # _ r 1
+q15 _ _ r q15
+q15 0 0 * q12
+q15 1 1 * q12
+
+q15z _ _ r q16
+q15z # * * q15
+q15z 1 * * q15
+q15z 0 * * q15
+
+q16 # _ l 1
+2 ! * r q17z
+q17z _ * r *
+q17z 1 * * q17
+q17z 0 * * q17
+
+q17 1 * r *
+q17 0 * r *
+q17 _ $ l q18
+
+q18 0 # r q19
+q18 # * l q21z
+q18 1 # r q20
+
+q19 $ 0 l q18
+q19 # 0 l q18
+
+q20 # 1 l q18
+q20 $ 1 l q18
+
+q21 # _ r 2
+q21 _ _ r q21
+q21 0 0 * q18
+q21 1 1 * q18
+
+q21z _ _ r q22
+q21z # * * q21
+q21z 1 * * q21
+q21z 0 * * q21
+
+q22 # _ l 2
+3 ! * r q23z
+q23z _ * r *
+q23z 1 * * q23
+q23z 0 * * q23
+
+q23 1 * r *
+q23 0 * r *
+q23 _ $ l q24
+
+q24 0 # r q25
+q24 # * l q27z
+q24 1 # r q26
+
+q25 $ 0 l q24
+q25 # 0 l q24
+
+q26 # 1 l q24
+q26 $ 1 l q24
+
+q27 # _ r 3
+q27 _ _ r q27
+q27 0 0 * q24
+q27 1 1 * q24
+
+q27z _ _ r q28
+q27z # * * q27
+q27z 1 * * q27
+q27z 0 * * q27
+
+q28 # _ l 3
+6 ! * r q29z
+q29z _ * r *
+q29z 1 * * q29
+q29z 0 * * q29
+
+q29 1 * r *
+q29 0 * r *
+q29 _ $ l q30
+
+q30 0 # r q31
+q30 # * l q33z
+q30 1 # r q32
+
+q31 $ 0 l q30
+q31 # 0 l q30
+
+q32 # 1 l q30
+q32 $ 1 l q30
+
+q33 # _ r 6
+q33 _ _ r q33
+q33 0 0 * q30
+q33 1 1 * q30
+
+q33z _ _ r q34
+q33z # * * q33
+q33z 1 * * q33
+q33z 0 * * q33
+
+q34 # _ l 6
+4 ! * r q35z
+q35z _ * r *
+q35z 1 * * q35
+q35z 0 * * q35
+
+q35 1 * r *
+q35 0 * r *
+q35 _ $ l q36
+
+q36 0 # r q37
+q36 # * l q39z
+q36 1 # r q38
+
+q37 $ 0 l q36
+q37 # 0 l q36
+
+q38 # 1 l q36
+q38 $ 1 l q36
+
+q39 # _ r 4
+q39 _ _ r q39
+q39 0 0 * q36
+q39 1 1 * q36
+
+q39z _ _ r q40
+q39z # * * q39
+q39z 1 * * q39
+q39z 0 * * q39
+
+q40 # _ l 4
+7 ! * r q41z
+q41z _ * r *
+q41z 1 * * q41
+q41z 0 * * q41
+
+q41 1 * r *
+q41 0 * r *
+q41 _ $ l q42
+
+q42 0 # r q43
+q42 # * l q45z
+q42 1 # r q44
+
+q43 $ 0 l q42
+q43 # 0 l q42
+
+q44 # 1 l q42
+q44 $ 1 l q42
+
+q45 # _ r 7
+q45 _ _ r q45
+q45 0 0 * q42
+q45 1 1 * q42
+
+q45z _ _ r q46
+q45z # * * q45
+q45z 1 * * q45
+q45z 0 * * q45
+
+q46 # _ l 7
+5 ! * r q47z
+q47z _ * r *
+q47z 1 * * q47
+q47z 0 * * q47
+
+q47 1 * r *
+q47 0 * r *
+q47 _ $ l q48
+
+q48 0 # r q49
+q48 # * l q51z
+q48 1 # r q50
+
+q49 $ 0 l q48
+q49 # 0 l q48
+
+q50 # 1 l q48
+q50 $ 1 l q48
+
+q51 # _ r 5
+q51 _ _ r q51
+q51 0 0 * q48
+q51 1 1 * q48
+
+q51z _ _ r q52
+q51z # * * q51
+q51z 1 * * q51
+q51z 0 * * q51
+
+q52 # _ l 5
+9 ! * r q53z
+q53z _ * r *
+q53z 1 * * q53
+q53z 0 * * q53
+
+q53 1 * r *
+q53 0 * r *
+q53 _ $ l q54
+
+q54 0 # r q55
+q54 # * l q57z
+q54 1 # r q56
+
+q55 $ 0 l q54
+q55 # 0 l q54
+
+q56 # 1 l q54
+q56 $ 1 l q54
+
+q57 # _ r 9
+q57 _ _ r q57
+q57 0 0 * q54
+q57 1 1 * q54
+
+q57z _ _ r q58
+q57z # * * q57
+q57z 1 * * q57
+q57z 0 * * q57
+
+q58 # _ l 9
+10 ! * r q59z
+q59z _ * r *
+q59z 1 * * q59
+q59z 0 * * q59
+
+q59 1 * r *
+q59 0 * r *
+q59 _ $ l q60
+
+q60 0 # r q61
+q60 # * l q63z
+q60 1 # r q62
+
+q61 $ 0 l q60
+q61 # 0 l q60
+
+q62 # 1 l q60
+q62 $ 1 l q60
+
+q63 # _ r 10
+q63 _ _ r q63
+q63 0 0 * q60
+q63 1 1 * q60
+
+q63z _ _ r q64
+q63z # * * q63
+q63z 1 * * q63
+q63z 0 * * q63
+
+q64 # _ l 10
+11 ! * r q65z
+q65z _ * r *
+q65z 1 * * q65
+q65z 0 * * q65
+
+q65 1 * r *
+q65 0 * r *
+q65 _ $ l q66
+
+q66 0 # r q67
+q66 # * l q69z
+q66 1 # r q68
+
+q67 $ 0 l q66
+q67 # 0 l q66
+
+q68 # 1 l q66
+q68 $ 1 l q66
+
+q69 # _ r 11
+q69 _ _ r q69
+q69 0 0 * q66
+q69 1 1 * q66
+
+q69z _ _ r q70
+q69z # * * q69
+q69z 1 * * q69
+q69z 0 * * q69
+
+q70 # _ l 11
+8 ! * r q71z
+q71z _ * r *
+q71z 1 * * q71
+q71z 0 * * q71
+
+q71 1 * r *
+q71 0 * r *
+q71 _ $ l q72
+
+q72 0 # r q73
+q72 # * l q75z
+q72 1 # r q74
+
+q73 $ 0 l q72
+q73 # 0 l q72
+
+q74 # 1 l q72
+q74 $ 1 l q72
+
+q75 # _ r 8
+q75 _ _ r q75
+q75 0 0 * q72
+q75 1 1 * q72
+
+q75z _ _ r q76
+q75z # * * q75
+q75z 1 * * q75
+q75z 0 * * q75
+
+q76 # _ l 8
