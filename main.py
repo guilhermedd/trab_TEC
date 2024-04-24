@@ -10,31 +10,32 @@ def get_input_file(input_file):
         # ;I = fita duplamente infinita
 
 
-def jump_one():
+def jump_one(start_q, return_to):
+    q0, q1, q2, q3, q4 = [f"q{i}" for i in range(start_q, start_q + 5)]
     # cur_st, cur_symb, new_symb, dire, new_st = line.split()
-    new_line = f"""q0 1 * r *
-q0 0 * r *
-q0 _ $ l q1
 
-q1 0 # r q2
-q1 # * l q4
-q1 1 # r q3
-
-q2 $ 0 l q1
-q2 # 0 l q1
-
-q3 # 1 l q1
-q3 $ 1 l q1
-
-q4 # _ r qf
-q4 0 0 * q1
-q4 1 1 * q1""".split("\n")
+    new_line = f"""{q0} 1 * r *
+{q0} 0 * r *
+{q0} _ $ l {q1}
+{q1} 0 # r {q2}
+{q1} # * l {q4}
+{q1} 1 # r {q3}
+{q2} $ 0 l {q1}
+{q2} # 0 l {q1}
+{q3} # 1 l {q1}
+{q3} $ 1 l {q1}
+{q4} # _ r {return_to}
+{q4} _ _ r {q4}
+{q4} 0 0 * {q1}
+{q4} 1 1 * {q1}""".split("\n")
     print(new_line)
+    with open('teste.txt', 'w') as f:
+        # for line in new_line:
+        f.write("\n".join(new_line))
 
 
 # tape, model = get_input_file()
-jump_one()
-
+jump_one(5, 1)
 
 """
 q0 1 * r *
