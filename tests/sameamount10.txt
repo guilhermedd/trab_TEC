@@ -31,6 +31,7 @@
 8 1 X l 9
 8 0 X l 10
 8 X X l 8
+
 8 B B r halt-accept
 9 1 1 l 9
 9 X X l 9

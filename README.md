@@ -11,3 +11,5 @@ python3 main.py
 ```
 
 O programa vai pedir para fornecer o caminho do arquivo de entrada e de saída.
+
+Não pode haver linhas em branco no arquivo de entrada
